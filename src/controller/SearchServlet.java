@@ -16,7 +16,7 @@ import model.EmployeeDAO;
 /**
  * Servlet implementation class SearchServlet
  */
-@WebServlet("/search")
+//@WebServlet("/search")
 public class SearchServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
     ArrayList<Employee> list;   

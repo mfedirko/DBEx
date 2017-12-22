@@ -15,7 +15,7 @@ Search:  <BR>
     <option value="emp_id">Employee ID</option>
     <option value="emp_name">Employee Name</option>
     </select>
-<input name="searchvalue" type="text"></input>
+<input name="searchvalue" required="true" minlength="2" type="text"></input>
 <input type="checkbox" name="incl" id="incl" value="ok">Include partial matches </input> 
 &emsp;
  <input type="submit" />

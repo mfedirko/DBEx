@@ -7,12 +7,30 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Login</title>
+
+	<script type="text/javascript">
+	function validate(){
+	
+		 var user = document.forms["formp"]["user"].value;
+		 var pass = document.forms["formp"]["pass"].value;
+    if (user == "" || pass=="") {
+        alert("Username and password must be filled out");
+    return false;
+    }
+    }
+        </script>
 </head>
 <body>
-	<form action="LoginServlet" method="post">
-		Enter username : <input type="text" name="user"> <BR>
-		Enter password : <input type="password" name="pass"> <BR>
+
+	<form name="formp" action="LoginServlet" method="post" onSubmit="JavaScript:validate()">
+		Enter username : <input type="text" required="true" name="user"> <BR>
+		
+		Enter password : <input type="password" required="true" name="pass"> <BR>
+			
 		<input type="submit" />
+		
 	</form>
+	
+
 </body>
 </html>

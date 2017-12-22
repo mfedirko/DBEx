@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class ViewEmplServlet
  */
-@WebServlet(description = "show emploees table", urlPatterns = { "/ViewEmplServlet" })
+//@WebServlet(description = "show emploees table", urlPatterns = { "/ViewEmplServlet" })
 public class ViewEmplServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
