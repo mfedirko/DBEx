@@ -15,7 +15,7 @@ Search:  <BR>
     <option value="emp_id">Employee ID</option>
     <option value="emp_name">Employee Name</option>
     </select>
-<input name="searchvalue" required="true" minlength="2" type="text"></input>
+<input name="searchvalue" required="true" pattern="[0-9]{1,}|[0-9A-Za-z]{2,}" title="two or more alphanumeric characters required." type="text"></input>
 <input type="checkbox" name="incl" id="incl" value="ok">Include partial matches </input> 
 &emsp;
  <input type="submit" />
