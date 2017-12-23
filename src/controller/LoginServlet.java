@@ -29,14 +29,22 @@ public class LoginServlet extends HttpServlet {
             HttpServletResponse response) throws ServletException, IOException {
         // Set a cookie for the user, so that the counter does not increase
         // every time the user press refresh
-        HttpSession session = request.getSession(true);
+        HttpSession session = request.getSession(false);
     
         RequestDispatcher rd = null;
+        if(session.getAttribute("remember")==null ) session.setAttribute("remember", request.getParameter("remember"));
+      if(((String)request.getParameter("remember"))!=null) {
         session.setAttribute("user", request.getParameter("user"));
         session.setAttribute("pass",request.getParameter("pass"));
+      }
+
+      else{
+          session.setAttribute("user", null);
+          session.setAttribute("pass",null);
+        }
       
-		String username = (String)session.getAttribute("user");
-		String password =(String)session.getAttribute("pass");
+		String username = ((String)session.getAttribute("user")==null)?request.getParameter("user"):((String)session.getAttribute("user"));
+		String password =((String)session.getAttribute("pass")==null)?request.getParameter("pass"):((String)session.getAttribute("pass"));
 		UserDAO userDAO=new UserDAO();
 		String pagename = null;
 		try {
@@ -61,7 +69,7 @@ public class LoginServlet extends HttpServlet {
     }
     protected void doGet(HttpServletRequest request,
             HttpServletResponse response) throws ServletException, IOException {
-        doPost(request,response);
+    	request.getRequestDispatcher("Home.jsp").forward(request, response);
     }
 //{}{}{}{}{}{}{}{}{}
 /*
